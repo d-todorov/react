@@ -1,0 +1,24 @@
+.root {
+  text-align: center;
+  padding: 2rem;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    }
+
+  .status {
+    text-align: center;
+    font-size: 1.2rem;
+
+    &.error {
+      color: red;
+    }
+  }
+}
