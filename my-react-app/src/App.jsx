@@ -3,6 +3,11 @@ import Card from './Card'
 import Modal from './Modal'
 import { useEffect, useState } from "react";
 
+/**
+ * App
+ * 
+ * Main app component
+ */
 function App() {
 
   const [loading, setLoading] = useState(true);
@@ -51,9 +56,13 @@ function App() {
           </button>
         </div>
       <div className="grid">
-        {filteredTrips.map((trip) => (
-          <Card key={trip.id} trip={trip} onMoreInfo={() => setOpenedTrip(trip)} />
-        ))}
+        {filteredTrips.length > 0 ? (
+          filteredTrips.map((trip) => (
+            <Card key={trip.id} trip={trip} onMoreInfo={() => setOpenedTrip(trip)} />
+          ))
+        ) : (
+          <p>No trips found.</p>
+        )}
       </div>
 
     {openedTrip && (

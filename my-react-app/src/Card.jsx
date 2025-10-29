@@ -1,5 +1,12 @@
 import "./Card.scss";
 
+/**
+ * Card component for displaying an individual trip
+ * 
+ * Props:
+ *   - trip : object containing trip data
+ *   - onMoreInfo : function that set currently opened trip
+ */
 const Card = ({ trip, onMoreInfo }) => {
   return (
     <div className="card">

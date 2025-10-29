@@ -1,5 +1,12 @@
 import "./Modal.scss";
 
+/**
+ * Modal component for displaying an more info about individual trip
+ * 
+ * Props:
+ *   - trip : object containing trip data
+ *   - onClose : function that sets opened trip
+ */
 const Modal = ({ trip, onClose }) => {
   return (
     <div className="modal-overlay" onClick={onClose}>
