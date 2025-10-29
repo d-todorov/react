@@ -1,5 +1,6 @@
 import './App.scss'
 import Card from './Card'
+import Modal from './Modal'
 import { useEffect, useState } from "react";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [trips, setTrips] = useState([]);
+  const [openedTrip, setOpenedTrip] = useState(null);
 
   useEffect(() => {
     fetch("/data.json")
@@ -29,9 +31,13 @@ function App() {
       <h1>Trips App</h1>
       <div className="grid">
         {trips.map((trip) => (
-          <Card key={trip.id} trip={trip} />
+          <Card key={trip.id} trip={trip} onMoreInfo={() => setOpenedTrip(trip)}/>
         ))}
       </div>
+
+    {openedTrip && (
+        <Modal trip={openedTrip} onClose={() => setOpenedTrip(null)} />
+    )}
     </div>
   );
 }
