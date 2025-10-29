@@ -20,9 +20,11 @@ Make sure you have the following installed:
 ```bash
 git clone https://github.com/d-todorov/react.git
 cd my-react-app
+```
 
 2. **Run with npm**
 
 ```bash
 npm install
 npm run dev
+```
